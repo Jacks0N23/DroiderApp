@@ -1,0 +1,46 @@
+ext {
+    //versions
+    kotlinVersion = '1.2.0'
+    supportVersion = '27.0.0'
+    retrofitVersion = '2.3.0'
+    glideVersion = '4.4.0'
+    firebaseVersion = '11.6.0'
+    moxyVersion = '1.5.3'
+
+
+    androidPlugin = 'com.android.tools.build:gradle:3.0.1'
+    kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+
+
+    compileDependencies = [
+            appcompatV7           : "com.android.support:appcompat-v7:$supportVersion",
+            design                : "com.android.support:design:$supportVersion",
+            cardview              : "com.android.support:cardview-v7:$supportVersion",
+            constraintLayout      : "com.android.support.constraint:constraint-layout:1.0.2",
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion",
+            rxJava2               : "io.reactivex.rxjava2:rxjava:2.1.3",
+            rxKotlin2             : 'io.reactivex.rxjava2:rxkotlin:2.1.0',
+            rxAndroid2            : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            gsonConverter         : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRxJava2Adapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            glide                 : "com.github.bumptech.glide:glide:$glideVersion",
+            firebaseAnalytics     : "com.google.firebase:firebase-core:$firebaseVersion",
+            moxy                  : "com.arello-mobile:moxy-android:$moxyVersion",
+            moxyAndroid           : "com.arello-mobile:moxy-android:$moxyVersion",
+            moxyAppCompat         : "com.arello-mobile:moxy-app-compat:$moxyVersion"
+    ]
+
+    aptDependencies = [
+            dagger: "com.google.dagger:dagger-compiler:2.11",
+            glide : "com.github.bumptech.glide:glide:$glideVersion",
+            moxy  : "com.arello-mobile:moxy-compiler:$moxyVersion"
+    ]
+
+    testDependencies = [
+            junit       : 'junit:junit:4.12',
+            kotlinTest  : 'io.kotlintest:kotlintest:2.0.5',
+            runner      : "com.android.support.test:runner:1.0.1",
+            espressoCore: "com.android.support.test.espresso:espresso-core:3.0.1"
+    ]
+}

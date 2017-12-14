@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 27
+
+    lintOptions {
+        htmlReport true
+        abortOnError true
+        warningsAsErrors true
+        lintConfig file("${project.name}lint.xml")
+    }
+
+    defaultConfig {
+        applicationId "io.justdev.droiderapp"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation compileDependencies.appcompatV7
+    implementation compileDependencies.design
+    implementation compileDependencies.cardview
+    implementation compileDependencies.constraintLayout
+    implementation compileDependencies.kotlin
+    implementation compileDependencies.rxJava2
+    implementation compileDependencies.rxKotlin2
+    implementation compileDependencies.rxAndroid2
+    implementation compileDependencies.retrofitRxJava2Adapter
+    implementation compileDependencies.gsonConverter
+    implementation compileDependencies.glide
+    implementation compileDependencies.firebaseAnalytics
+    implementation compileDependencies.moxy
+    implementation compileDependencies.moxyAndroid
+    implementation compileDependencies.moxyAppCompat
+
+    annotationProcessor aptDependencies.dagger
+    annotationProcessor aptDependencies.glide
+    kapt compileDependencies.moxy
+
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.kotlinTest
+
+    androidTestImplementation testDependencies.runner
+    androidTestImplementation testDependencies.espressoCore
+}
+
+kapt {
+    generateStubs = true
+}
