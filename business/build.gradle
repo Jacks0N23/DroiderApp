@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+dependencies {
+    api compileDependencies.kotlin
+    api compileDependencies.rxJava2
+    api compileDependencies.rxKotlin2
+    api compileDependencies.retrofitRxJava2Adapter
+    api compileDependencies.retrofitGsonConverter
+    api compileDependencies.okHttpLoggingInterceptor
+}

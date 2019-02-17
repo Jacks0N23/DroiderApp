@@ -1,9 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     lintOptions {
         htmlReport true
@@ -14,11 +15,11 @@ android {
 
     defaultConfig {
         applicationId "io.justdev.droiderapp"
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -29,26 +30,26 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':business')
     implementation compileDependencies.appcompatV7
     implementation compileDependencies.design
     implementation compileDependencies.cardview
     implementation compileDependencies.constraintLayout
-    implementation compileDependencies.kotlin
-    implementation compileDependencies.rxJava2
-    implementation compileDependencies.rxKotlin2
     implementation compileDependencies.rxAndroid2
-    implementation compileDependencies.retrofitRxJava2Adapter
-    implementation compileDependencies.gsonConverter
     implementation compileDependencies.glide
     implementation compileDependencies.firebaseAnalytics
-    implementation compileDependencies.moxy
-    implementation compileDependencies.moxyAndroid
-    implementation compileDependencies.moxyAppCompat
+    implementation compileDependencies.navi
+    implementation compileDependencies.dagger
+    implementation compileDependencies.bottomBar
+    implementation compileDependencies.picasso
 
-    annotationProcessor aptDependencies.dagger
-    annotationProcessor aptDependencies.glide
-    kapt compileDependencies.moxy
+    implementation compileDependencies.rxBinding3
+    implementation compileDependencies.materialRxBinding3
+    implementation compileDependencies.rxBindingAppCompat
+    implementation compileDependencies.rxBindingSwiperefresh
+
+    kapt aptDependencies.dagger
+    kapt aptDependencies.glide
 
     testImplementation testDependencies.junit
     testImplementation testDependencies.kotlinTest

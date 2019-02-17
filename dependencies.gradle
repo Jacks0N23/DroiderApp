@@ -1,46 +1,51 @@
 ext {
     //versions
-    kotlinVersion = '1.2.0'
-    supportVersion = '27.0.0'
-    retrofitVersion = '2.3.0'
+    kotlinVersion = '1.3.20'
+    retrofitVersion = '2.4.0'
     glideVersion = '4.4.0'
-    firebaseVersion = '11.6.0'
-    moxyVersion = '1.5.3'
+    firebaseVersion = '16.0.4'
+    dagger = '2.21'
+    rxbinding3Version = '3.0.0-alpha2'
+    okHttpVersion = '3.12.1'
 
-
-    androidPlugin = 'com.android.tools.build:gradle:3.0.1'
+    androidPlugin = 'com.android.tools.build:gradle:3.3.1'
     kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
 
     compileDependencies = [
-            appcompatV7           : "com.android.support:appcompat-v7:$supportVersion",
-            design                : "com.android.support:design:$supportVersion",
-            cardview              : "com.android.support:cardview-v7:$supportVersion",
-            constraintLayout      : "com.android.support.constraint:constraint-layout:1.0.2",
-            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion",
-            rxJava2               : "io.reactivex.rxjava2:rxjava:2.1.3",
-            rxKotlin2             : 'io.reactivex.rxjava2:rxkotlin:2.1.0',
-            rxAndroid2            : "io.reactivex.rxjava2:rxandroid:2.0.1",
-            retrofit              : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            gsonConverter         : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-            retrofitRxJava2Adapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
-            glide                 : "com.github.bumptech.glide:glide:$glideVersion",
-            firebaseAnalytics     : "com.google.firebase:firebase-core:$firebaseVersion",
-            moxy                  : "com.arello-mobile:moxy-android:$moxyVersion",
-            moxyAndroid           : "com.arello-mobile:moxy-android:$moxyVersion",
-            moxyAppCompat         : "com.arello-mobile:moxy-app-compat:$moxyVersion"
+            appcompatV7             : "androidx.appcompat:appcompat:1.0.2",
+            design                  : "com.google.android.material:material:1.0.0",
+            cardview                : "androidx.cardview:cardview:1.0.0",
+            constraintLayout        : 'androidx.constraintlayout:constraintlayout:1.1.2',
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            rxJava2                 : "io.reactivex.rxjava2:rxjava:2.2.4",
+            rxKotlin2               : 'io.reactivex.rxjava2:rxkotlin:2.3.0',
+            rxAndroid2              : "io.reactivex.rxjava2:rxandroid:2.1.0",
+            retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRxJava2Adapter  : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            glide                   : "com.github.bumptech.glide:glide:$glideVersion",
+            firebaseAnalytics       : "com.google.firebase:firebase-core:$firebaseVersion",
+            navi                    : 'com.trello.navi2:navi:2.1.0',
+            dagger                  : "com.google.dagger:dagger:$dagger",
+            rxBinding3              : "com.jakewharton.rxbinding3:rxbinding:$rxbinding3Version",
+            materialRxBinding3      : "com.jakewharton.rxbinding3:rxbinding-material:$rxbinding3Version",
+            rxBindingAppCompat      : "com.jakewharton.rxbinding3:rxbinding-appcompat:$rxbinding3Version",
+            rxBindingSwiperefresh   : "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:$rxbinding3Version",
+            bottomBar               : 'com.aurelhubert:ahbottomnavigation:2.3.4',
+            okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            picasso                 : "com.squareup.picasso:picasso:2.71828",
     ]
 
     aptDependencies = [
-            dagger: "com.google.dagger:dagger-compiler:2.11",
+            dagger: "com.google.dagger:dagger-compiler:$dagger",
             glide : "com.github.bumptech.glide:glide:$glideVersion",
-            moxy  : "com.arello-mobile:moxy-compiler:$moxyVersion"
     ]
 
     testDependencies = [
             junit       : 'junit:junit:4.12',
             kotlinTest  : 'io.kotlintest:kotlintest:2.0.5',
-            runner      : "com.android.support.test:runner:1.0.1",
-            espressoCore: "com.android.support.test.espresso:espresso-core:3.0.1"
+            runner      : 'androidx.test:runner:1.1.0-alpha4',
+            espressoCore: 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
     ]
 }
